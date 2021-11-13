@@ -7,8 +7,7 @@ document.getElementById('generate').addEventListener('click', () => {
 
   //prompts asking for infomation
   let length = parseInt(prompt("Enter the length of your desired password. (Min: 8 characters Max: 128 characters)"))
-  console.log(length)
-  if (length >= 8 || length <= 128) {
+  if (length >= 8 && length <= 128) {
     confirmNum = confirm("Will this contain numbers?")
     confirmSpec = confirm("Will this contain special characters?")
     confirmUpper = confirm("Will this contain uppercase characters?")
@@ -39,8 +38,6 @@ document.getElementById('generate').addEventListener('click', () => {
   for (var i = 0; i < length; i++) {
     password += choices.charAt(Math.floor(Math.random() * choices.length));
   }
-
-  console.log(password)
   
   document.getElementById("password").innerHTML = `
     ${password}
